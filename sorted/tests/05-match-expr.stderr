@@ -3,3 +3,11 @@ error: Fmt should sort before Io
    |
 88 |             Fmt(e) => write!(f, "{}", e),
    |             ^^^
+
+error[E0046]: not all trait items implemented, missing: `fmt`
+  --> tests/05-match-expr.rs:80:1
+   |
+80 | impl Display for Error {
+   | ^^^^^^^^^^^^^^^^^^^^^^ missing `fmt` in implementation
+   |
+   = help: implement the missing item: `fn fmt(&self, _: &mut Formatter<'_>) -> Result<(), std::fmt::Error> { todo!() }`
